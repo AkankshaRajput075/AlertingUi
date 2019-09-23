@@ -24,7 +24,7 @@ export class MonitoringVitalComponent implements OnInit {
     public pulseAlertGenerated: boolean = false;
     public spo2AlertGenerated: boolean = false;
     public temperatureAlertGenerated: boolean = false;
-    public alertGenerated: boolean = false;
+    public alertGenerated: boolean = true;
 
 
 
@@ -32,6 +32,7 @@ export class MonitoringVitalComponent implements OnInit {
     bedId: number;
 
 
+    test:boolean=false;
 
     public constructor(private vitalService: MonitoringVitalService) {
 
@@ -43,11 +44,12 @@ export class MonitoringVitalComponent implements OnInit {
 
                 () => {
                     this.getVitals(this.bedId);
+                    this.alertGenerated=true;
                 }
 
             )
 
-        //this.getVitals(this.bedId);
+        this.getVitals(this.bedId);
     }
 
     getVitals(bedId): void {
@@ -64,10 +66,12 @@ export class MonitoringVitalComponent implements OnInit {
     checkPulseRate(): boolean {
         console.log("Bed : ", this.bedId);
         if (this.vital.pulseRate.result != 'Normal' || this.pulseAlertGenerated) {
-            console.log("Pulse Not Normal ");
+            if(this.alertGenerated)
+            {
+                this.pulseAlertGenerated=true;
+            }
             console.log("In pulse : ", this.pulseAlertGenerated);
-            this.pulseAlertGenerated = true;
-            this.alertGenerated = true;
+
             return true;
         }
         else {
@@ -80,10 +84,12 @@ export class MonitoringVitalComponent implements OnInit {
         console.log("Bed : ", this.bedId);
 
         if (this.vital.spo2.result != 'Normal' || this.spo2AlertGenerated) {
-            console.log("Spo2 Not Normal ");
+            if(this.alertGenerated)
+            {
+                this.spo2AlertGenerated=true;
+            }
             console.log("In spo2 : ", this.spo2AlertGenerated);
-            this.spo2AlertGenerated = true;
-            this.alertGenerated = true;
+
             return true;
         }
         else {
@@ -97,11 +103,14 @@ export class MonitoringVitalComponent implements OnInit {
         console.log("Bed : ", this.bedId);
 
         if (this.vital.temperature.result != 'Normal' || this.temperatureAlertGenerated) {
-            console.log("temp Not Normal ");
+            if(this.alertGenerated)
+            {
+                this.temperatureAlertGenerated=true;
+            }
             console.log("In temp : ", this.temperatureAlertGenerated);
-            this.temperatureAlertGenerated = true;
-            this.alertGenerated = true;
+
             return true;
+
         }
         else {
             console.log("returning false for checkPTempRate");
@@ -110,20 +119,21 @@ export class MonitoringVitalComponent implements OnInit {
         }
     }
 
-    dismissAlert(): boolean {
+    dismissAlert(): void {
+
         console.log("dismiss called");
-        console.log("before pulse : ", this.pulseAlertGenerated)
+        // console.log("before pulse : ", this.pulseAlertGenerated)
         this.temperatureAlertGenerated = false;
         this.pulseAlertGenerated = false;
         this.spo2AlertGenerated = false;
-        this.alertGenerated = false;
-        console.log("after pulse : ", this.pulseAlertGenerated);
-        console.log("after spo2 : ", this.spo2AlertGenerated);
-        console.log("after temp : ", this.temperatureAlertGenerated);
-        console.log("after alert : ", this.alertGenerated);
+        // console.log("after pulse : ", this.pulseAlertGenerated);
+        // console.log("after spo2 : ", this.spo2AlertGenerated);
+        // console.log("after temp : ", this.temperatureAlertGenerated);
+        // console.log("after alert : ", this.alertGenerated);
+        // return this.alertGenerated;
+        this.alertGenerated=false;
+        console.log("TestingAlertGenerated : ",this.alertGenerated);
 
-
-        return this.alertGenerated;
     }
 
     public getPulseAlert() {
