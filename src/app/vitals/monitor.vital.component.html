@@ -1,0 +1,32 @@
+<button type='button' class="btn btn-warning btn-lg" (click)=dismissAlert($event)>
+    <p class="glyphicon glyphicon-remove-sign"></p> Dismiss
+</button>
+
+
+<a *ngIf=checkPulseRate() >
+    Pulse:{{pulseAlertGenerated}}
+      <div class=alert *ngIf="getAlert()==true">
+        <p>{{vital.pulseRate.vitalName}}:{{vital.pulseRate.reading}}</p><br>
+        <p>Status:{{vital.pulseRate.result}}</p>
+    </div>
+
+</a>
+
+<a *ngIf=checkSpo2()>
+    Spo2:{{spo2AlertGenerated}}
+    <div class=alert *ngIf="getAlert()==true">
+        <p>{{vital.spo2.vitalName}}:{{vital.spo2.reading}}</p><br>
+        <p>Status:{{vital.spo2.result}}</p>
+    </div>
+
+</a>
+
+<a *ngIf=checkTemperature() >
+    Temp :{{temperatureAlertGenerated}}
+    <div class=alert *ngIf="getAlert()==true">
+        <p>{{vital.temperature.vitalName}}:{{vital.temperature.reading}}</p><br>
+        <p>Status:{{vital.temperature.result}}</p>
+    </div>
+
+</a>
+
