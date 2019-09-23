@@ -1,13 +1,16 @@
+
 <button type='button' class="btn btn-warning btn-lg" (click)="dismissAlert($event)">
     <p class="glyphicon glyphicon-remove-sign"></p> Dismiss
 </button>
 
-Pulse: {{pulseAlertGenerated}}
-Spo2 : {{spo2AlertGenerated}}
-temp  : {{temperatureAlertGenerated}}
+Pulse: {{this.pulseAlertGenerated}}
+Spo2 : {{this.spo2AlertGenerated}}
+temp  : {{this.temperatureAlertGenerated}}
+
+Test : {{this.alertGenerated}}
 
 <a *ngIf="this.checkPulseRate()" >
-    Pulse:{{pulseAlertGenerated}}
+    Pulse:{{this.pulseAlertGenerated}}
       <div class=alert *ngIf="this.pulseAlertGenerated===true">
         <p>{{vital.pulseRate.vitalName}}:{{vital.pulseRate.reading}}</p><br>
         <p>Status:{{vital.pulseRate.result}}</p>
@@ -16,7 +19,7 @@ temp  : {{temperatureAlertGenerated}}
 </a>
 
 <a *ngIf="this.checkSpo2()" >
-    Spo2:{{spo2AlertGenerated}}
+    Spo2:{{this.spo2AlertGenerated}}
     <div class=alert *ngIf="this.spo2AlertGenerated===true">
         <p>{{vital.spo2.vitalName}}:{{vital.spo2.reading}}</p><br>
         <p>Status:{{vital.spo2.result}}</p>
@@ -25,11 +28,14 @@ temp  : {{temperatureAlertGenerated}}
 </a>
 
 <a *ngIf="this.checkTemperature()" >
-    Temp :{{temperatureAlertGenerated}}
+    Temp :{{this.temperatureAlertGenerated}}
     <div class=alert *ngIf="this.temperatureAlertGenerated===true">
         <p>{{vital.temperature.vitalName}}:{{vital.temperature.reading}}</p><br>
         <p>Status:{{vital.temperature.result}}</p>
     </div>
 
 </a>
+
+
+
 
