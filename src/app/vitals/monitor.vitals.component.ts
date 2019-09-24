@@ -32,8 +32,6 @@ export class MonitoringVitalComponent implements OnInit {
     bedId: number;
 
 
-    test:boolean=false;
-
     public constructor(private vitalService: MonitoringVitalService) {
 
     }
