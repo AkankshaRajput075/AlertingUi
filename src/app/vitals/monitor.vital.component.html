@@ -1,10 +1,17 @@
 
-<button type='button' class="btn btn-warning btn-lg" (click)="dismissAlert($event)">
+<head>
+        <!-- ... -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+        <!-- ... -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+      </head>
+ <button type='button' class="btn btn-warning btn-lg" (click)="dismissAlert($event)">
     <p class="glyphicon glyphicon-remove-sign"></p> Dismiss
-</button>
+</button> 
 
-
-<a *ngIf="this.checkPulseRate()" >
+<!--
+ <a *ngIf="this.checkPulseRate()" >
       <div class=alert *ngIf="this.pulseAlertGenerated===true">
         <p>{{vital.pulseRate.vitalName}}:{{vital.pulseRate.reading}}</p><br>
         <p>Status:{{vital.pulseRate.result}}</p>
@@ -26,8 +33,8 @@
         <p>Status:{{vital.temperature.result}}</p>
     </div>
 
-</a>
+</a> -->
 
 
-
+<a class ="alert" *ngIf="this.checkVitals()" (click)="openBottomSheet()">Alert</a>
 

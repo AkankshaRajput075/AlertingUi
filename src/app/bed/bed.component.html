@@ -3,6 +3,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=block" rel="stylesheet">
         
 </head>
 
@@ -11,14 +12,14 @@
         <a *ngFor="let b of bedList" class="col-1-4">
           <div class="module">
               <div *ngIf="b.isAvailable === true" >
-              <h1 class="alert alert-info">
+              <h1 class="empty">
                     <h4>{{b.bedId}}</h4>
               </h1>
               
             </div>
 
             <div *ngIf="b.isAvailable === false" >
-                    <h1 class="alert alert-success">
+                    <h1 class="occupied">
                           <h4>{{b.bedId}}</h4>
                     </h1>
                     <monitor-vital [bedId]="b.bedId"></monitor-vital>
@@ -32,14 +33,14 @@
         <a *ngFor="let b of bedList" class="colleft-1-4">
                 <div class="moduleleft">
                 <div *ngIf="b.isAvailable === true" >
-                <h1 class="alert alert-info">
+                <h1 class="empty">
                         <h4>{{b.bedId}}</h4>
                 </h1>
                 
                 </div>
 
                 <div *ngIf="b.isAvailable === false" >
-                        <h1 class="alert alert-success">
+                        <h1 class="occupied">
                                 <h4>{{b.bedId}}</h4>
                         </h1>
 
@@ -56,13 +57,13 @@
                 <a *ngFor="let b of bedList" class="col-1-4">
                   <div class="module">
                       <div *ngIf="b.isAvailable === true" >
-                      <h1 class="alert alert-info">
+                      <h1 class="empty">
                             <h4>{{b.bedId}}</h4>
                       </h1>
                     </div>
         
                     <div *ngIf="b.isAvailable === false" >
-                            <h1 class="alert alert-success">
+                            <h1 class="occupied">
                                   <h4>{{b.bedId}}</h4>
                             </h1>
                             <br>
@@ -72,5 +73,5 @@
                   </div>
                   
                 </a>
-        </div>
+</div>
         

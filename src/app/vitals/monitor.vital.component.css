@@ -1,9 +1,29 @@
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+
 .alert
 {
-    background-color: red;
+    background-color: rgb(248, 62, 62);
     text-align: center;
+    color:white;
 }
 
 .displayList{
     display: none;
+}
+
+.hover_bkgr_fricc{
+    background:rgba(0,0,0,.4);
+    cursor:pointer;
+    height:10%;
+    position:fixed;
+    text-align:center;
+    top:0;
+    width:100%;
+    z-index:10000;
+}
+.hover_bkgr_fricc .helper{
+    display:inline-block;
+    height:100%;
+    vertical-align:middle;
 }

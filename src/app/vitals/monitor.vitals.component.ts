@@ -5,6 +5,8 @@ import { PulseRate } from './pulserate';
 import { Spo2 } from './spo2';
 import { Temperature } from './temperature';
 import { Observable, timer, interval } from 'rxjs';
+import {MatBottomSheet, MatBottomSheetRef} from '@angular/material/bottom-sheet';
+
 
 const timeLimit = interval(5000);
 
@@ -25,14 +27,14 @@ export class MonitoringVitalComponent implements OnInit {
     public spo2AlertGenerated: boolean = false;
     public temperatureAlertGenerated: boolean = false;
     public alertGenerated: boolean = true;
-
+    public displayAlert=false;
 
 
     @Input()
     bedId: number;
 
 
-    public constructor(private vitalService: MonitoringVitalService) {
+    public constructor(private vitalService: MonitoringVitalService,private _bottomSheet: MatBottomSheet) {
 
     }
 
@@ -148,4 +150,37 @@ export class MonitoringVitalComponent implements OnInit {
         console.log("Returning temperature: ", this.pulseAlertGenerated);
         return this.temperatureAlertGenerated;
     }
+
+    public checkVitals():boolean
+    {
+     
+        if(this.checkPulseRate() || this.checkSpo2() || this.checkTemperature())
+        {
+            return true;
+        }
+    }
+
+    displayAlertFun():void{
+        this.displayAlert=true;
+        console.log("Alert : ",this.displayAlert);
+
+    }
+
+    openBottomSheet(): void {
+        this._bottomSheet.open(BottomSheetOverviewExampleSheet);
+      }
+
 }
+
+@Component({
+    selector: 'test',
+    templateUrl: './display.component.html',
+  })
+  export class BottomSheetOverviewExampleSheet {
+    constructor(private _bottomSheetRef: MatBottomSheetRef<BottomSheetOverviewExampleSheet>) {}
+  
+    openLink(event: MouseEvent): void {
+      this._bottomSheetRef.dismiss();
+      event.preventDefault();
+    }
+  }

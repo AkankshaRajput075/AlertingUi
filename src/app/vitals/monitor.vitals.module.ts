@@ -3,15 +3,27 @@ import { FormsModule } from '@angular/forms'
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { MonitoringVitalComponent } from './monitor.vitals.component';
+import { MonitoringVitalComponent, BottomSheetOverviewExampleSheet } from './monitor.vitals.component';
 import { MonitoringVitalService } from './monitor.vitals.service';
 import { ToggleButtonModule } from '../toggle/toggle.module';
-import { BedModule } from '../bed/bed.module';
+import {MatNativeDateModule} from '@angular/material/core';
+import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {DemoMaterialModule} from './material.module';
 
 
 @NgModule({
-    declarations : [MonitoringVitalComponent],
-    imports : [FormsModule , BrowserModule , CommonModule , HttpClientModule ,ToggleButtonModule],
+    declarations : [MonitoringVitalComponent ,BottomSheetOverviewExampleSheet ],
+    imports : [FormsModule , 
+        BrowserModule ,
+         CommonModule ,
+          HttpClientModule ,
+          ToggleButtonModule ,
+          MatNativeDateModule,
+          BrowserAnimationsModule,
+          DemoMaterialModule,
+          ],
+    entryComponents: [ BottomSheetOverviewExampleSheet],
     exports : [MonitoringVitalComponent],
     providers:[MonitoringVitalService]
     })
@@ -20,3 +32,4 @@ export class MonitoringVitalModule
 
     
 }
+
