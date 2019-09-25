@@ -25,7 +25,7 @@ import {DemoMaterialModule} from './material.module';
           ],
     entryComponents: [ BottomSheetOverviewExampleSheet],
     exports : [MonitoringVitalComponent],
-    providers:[MonitoringVitalService]
+    providers:[MonitoringVitalService,MonitoringVitalComponent]
     })
 export class MonitoringVitalModule
 {

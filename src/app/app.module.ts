@@ -11,6 +11,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { ConfigService } from './service/config';
 import { MonitoringVitalModule } from './vitals/monitor.vitals.module';
 import {MonitoringVitalComponent} from './vitals/monitor.vitals.component';
+import { AlertComponent } from './alert/alert.component';
+import { AlertModule } from './alert/alert.module';
 @NgModule({
   declarations: [
     AppComponent
@@ -24,7 +26,8 @@ import {MonitoringVitalComponent} from './vitals/monitor.vitals.component';
     PatientModule,
     BedModule,
     HttpClientModule,
-    MonitoringVitalModule
+    MonitoringVitalModule,
+    AlertModule
   ],
   providers: [ConfigService],
   bootstrap: [AppComponent]

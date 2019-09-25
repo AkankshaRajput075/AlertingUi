@@ -1,21 +1,26 @@
 <mat-nav-list>
-        <a href="https://keep.google.com/" mat-list-item (click)="openLink($event)">
-          <span mat-line>Google Keep</span>
-          <span mat-line>Add to a note</span>
-        </a>
-      
-        <a href="https://docs.google.com/" mat-list-item (click)="openLink($event)">
-          <span mat-line>Google Docs</span>
-          <span mat-line>Embed in a document</span>
-        </a>
-      
-        <a href="https://plus.google.com/" mat-list-item (click)="openLink($event)">
-          <span mat-line>Google Plus</span>
-          <span mat-line>Share with your friends</span>
-        </a>
-      
-        <a href="https://hangouts.google.com/" mat-list-item (click)="openLink($event)">
-          <span mat-line>Google Hangouts</span>
-          <span mat-line>Show to your coworkers</span>
-        </a>
-      </mat-nav-list>
+
+ <a *ngIf="this.callCheckPulserate()" >
+      <div class=alert *ngIf="this.monitorVital.pulseAlertGenerated===true">
+        <p>{{vital.pulseRate.vitalName}}:{{vital.pulseRate.reading}}</p><br>
+        <p>Status:{{vital.pulseRate.result}}</p>
+    </div>
+
+</a>
+
+<a *ngIf="this.monitorVital.checkSpo2()" >
+    <div class=alert *ngIf="this.monitorVital.spo2AlertGenerated===true">
+        <p>{{vital.spo2.vitalName}}:{{vital.spo2.reading}}</p><br>
+        <p>Status:{{vital.spo2.result}}</p>
+    </div>
+
+</a>
+
+<a *ngIf="this.monitorVital.checkTemperature()" >
+    <div class=alert *ngIf="this.monitorVital.temperatureAlertGenerated===true">
+        <p>{{vital.temperature.vitalName}}:{{vital.temperature.reading}}</p><br>
+        <p>Status:{{vital.temperature.result}}</p>
+    </div>
+
+</a> 
+</mat-nav-list>
