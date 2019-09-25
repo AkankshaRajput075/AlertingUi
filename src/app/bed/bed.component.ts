@@ -2,6 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { BedService } from './bed.service';
 import { Bed } from './bed';
 import { LayoutComponent } from '../Layout/layout.component';
+import {MatDialog} from '@angular/material';
+import { MonitoringVitalComponent } from '../vitals/monitor.vitals.component';
 
 let templateURL='';
 
@@ -29,7 +31,7 @@ export class BedComponent implements OnInit{
     alignment:string;
 
 
-    public constructor(private bedService:BedService,private layoutComponent:LayoutComponent)
+    public constructor(private bedService:BedService,private layoutComponent:LayoutComponent,public dialog:MatDialog)
     {
     }
 

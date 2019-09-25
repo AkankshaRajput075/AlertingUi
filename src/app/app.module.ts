@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ConfigService } from './service/config';
 import { MonitoringVitalModule } from './vitals/monitor.vitals.module';
 import {MonitoringVitalComponent} from './vitals/monitor.vitals.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent
@@ -24,9 +25,11 @@ import {MonitoringVitalComponent} from './vitals/monitor.vitals.component';
     PatientModule,
     BedModule,
     HttpClientModule,
-    MonitoringVitalModule
+    MonitoringVitalModule,
+    BrowserAnimationsModule
   ],
   providers: [ConfigService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents:[MonitoringVitalComponent]
 })
 export class AppModule { }

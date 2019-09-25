@@ -24,27 +24,8 @@ class DashBoardStubComponent{}
       ],
     }).compileComponents();
   }));
-
-  beforeEach( () =>
-  {
-      fixture=TestBed.createComponent(AppComponent);
-      appComponent=fixture.componentInstance;
-// to detect the changes
-     fixture.detectChanges();
- 
-      //getting hold of the paragh tag
-      debugElement=fixture.debugElement.query(By.css('p'));
-      //getting hold of the native html element
-      htmlElement=debugElement.nativeElement;
-  }
-  )
   
-it('it must display appComponent title as AlertingSystem',() =>
-{
-// using the htmlElement we can asssert that the text on the screen is an title
-expect(htmlElement.textContent).toEqual('AlertingSystem');
- 
-})
+
 
 
 });

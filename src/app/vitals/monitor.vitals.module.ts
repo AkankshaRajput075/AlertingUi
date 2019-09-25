@@ -7,11 +7,12 @@ import { MonitoringVitalComponent } from './monitor.vitals.component';
 import { MonitoringVitalService } from './monitor.vitals.service';
 import { ToggleButtonModule } from '../toggle/toggle.module';
 import { BedModule } from '../bed/bed.module';
+import {MatDialogModule} from '@angular/material';
 
 
 @NgModule({
     declarations : [MonitoringVitalComponent],
-    imports : [FormsModule , BrowserModule , CommonModule , HttpClientModule ,ToggleButtonModule],
+    imports : [FormsModule , BrowserModule , CommonModule , HttpClientModule ,ToggleButtonModule,MatDialogModule],
     exports : [MonitoringVitalComponent],
     providers:[MonitoringVitalService]
     })

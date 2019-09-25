@@ -32,8 +32,9 @@ it('should receive beds via GET method',()=>
  
     const dummyBedList:Bed[]=[
         {bedId:1,isAvailable:true},
-        {bedId:2,isAvailable:true}];
-        service.getAllBeds().subscribe(beds=>{
+        {bedId:2,isAvailable:true}
+    ];
+service.getAllBeds().subscribe(beds=>{
             expect(beds).toEqual(dummyBedList)
         });
 // make a dummy request using httpMock
@@ -47,5 +48,12 @@ expect(request.request.method).toBe('GET');
  
 request.flush(dummyBedList);
  
-        })
+})
+
+it('should be created', () => {
+    const service: BedService = TestBed.get(BedService);
+    expect(service).toBeTruthy();
+  });
+
+
 })
