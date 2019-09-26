@@ -1,10 +1,9 @@
-import {Injectable} from '@angular/core';
-//import { HttpClient } from '@angular/common/http';
- 
+import { Injectable } from '@angular/core';
+
 @Injectable()
 export class ConfigService {
-    public numberOfBedsInTopRow:number=5;
-    public numberOfBedsInLeftSide:number=3;
-    public numberOfBedsInLastRow:number=2;
-    public numberOfBedsInRightSide:number=0;
+    public numberOfBedsInTopRow = 5;
+    public numberOfBedsInLeftSide = 3;
+    public numberOfBedsInLastRow = 2;
+    public numberOfBedsInRightSide = 0;
 }

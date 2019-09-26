@@ -3,45 +3,48 @@ import { BedService } from './bed.service';
 import { Bed } from './bed';
 import { LayoutComponent } from '../Layout/layout.component';
 
-let templateURL='';
 
 @Component({
-  selector: 'bed',
-  templateUrl:'./bed.component.html',
-  styleUrls: ['./bed.component2.css']
+    selector: 'app-bed',
+    templateUrl: './bed.component.html',
+    styleUrls: ['./bed.component.css']
 })
 
-export class BedComponent implements OnInit{
- 
-    bedList:Bed[];
+export class BedComponent implements OnInit {
+
+    bedList: Bed[];
     @Input()
-    childselectedLayout:string;
+    childselectedLayout: string;
     @Input()
-    text:string;
-    
-    @Input()
-    start:number;
+    text: string;
 
     @Input()
-    end:number;
+    start: number;
 
     @Input()
-    alignment:string;
+    end: number;
+
+    @Input()
+    alignment: string;
+
+    agreed: boolean;
 
 
-
-
-    public constructor(private bedService:BedService,private layoutComponent:LayoutComponent)
-    {
+    public constructor(private bedService: BedService, private layoutComponent: LayoutComponent) {
     }
 
-    ngOnInit()
-    {
+    ngOnInit() {
         this.getAllBeds();
     }
 
-    getAllBeds():void{
-        this.bedService.getAllBeds().subscribe(data=>this.bedList=data.slice(this.start,(this.end+this.start)));
+    getAllBeds(): void {
+        this.bedService.getAllBeds().subscribe(data => this.bedList = data.slice(this.start, (this.end + this.start)));
+    }
+
+
+    changeBedStatus(bedStatus, bedId: number) {
+        this.bedService.changeBedStatus(bedId).subscribe();
+
     }
 
 }

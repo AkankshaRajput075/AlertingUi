@@ -1,10 +1,9 @@
-export class PulseRate{
-    reading:number;
-    result:string;
-    vitalName:string;
+export class PulseRate {
+    reading: number;
+    result: string;
+    vitalName: string;
 
-    public constructor(vitalName:string)
-    {
-        this.vitalName=vitalName;
+    public constructor(vitalName: string) {
+        this.vitalName = vitalName;
     }
 }

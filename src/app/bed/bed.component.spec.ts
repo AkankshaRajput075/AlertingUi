@@ -4,19 +4,19 @@ import { async } from 'q';
 import { TestBed } from '@angular/core/testing';
 
 
- 
+
 describe('BedComponent', () => {
- 
-  @Component({ selector: 'monitor-vital', template: '' })
-  class MonitorVitalStubComponent { }
- 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [
-        MonitoringVitalComponent,
-        MonitorVitalStubComponent
-      ]
-    }).compileComponents();
-  }));
- 
+
+    @Component({ selector: 'app-monitor-vital', template: '' })
+    class MonitorVitalStubComponent { }
+
+    beforeEach(async(() => {
+        TestBed.configureTestingModule({
+            declarations: [
+                MonitoringVitalComponent,
+                MonitorVitalStubComponent
+            ]
+        }).compileComponents();
+    }));
+
 });

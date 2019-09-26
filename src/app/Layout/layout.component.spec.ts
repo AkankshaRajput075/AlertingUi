@@ -4,11 +4,11 @@ import { async } from 'q';
 import { TestBed } from '@angular/core/testing';
 
 
- 
+
 describe('LayoutComponent', () => {
-    @Component({ selector: 'bed', template: '' })
+    @Component({ selector: 'app-bed', template: '' })
     class BedStubComponent { }
- 
+
     beforeEach(async(() => {
         TestBed.configureTestingModule({
             declarations: [
@@ -17,6 +17,6 @@ describe('LayoutComponent', () => {
             ]
         }).compileComponents();
     }));
- 
+
 }
 );

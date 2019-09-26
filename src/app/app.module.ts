@@ -13,6 +13,7 @@ import { MonitoringVitalModule } from './vitals/monitor.vitals.module';
 import { MonitoringVitalComponent } from './vitals/monitor.vitals.component';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { CheckboxModule } from './checkbox/checkbox.module';
 @NgModule({
   declarations: [
     AppComponent
@@ -29,7 +30,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     MonitoringVitalModule,
     MatSlideToggleModule,
     MatCheckboxModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CheckboxModule
   ],
   providers: [ConfigService],
   bootstrap: [AppComponent]

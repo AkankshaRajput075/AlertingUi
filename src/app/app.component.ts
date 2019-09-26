@@ -6,9 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: []
 })
 export class AppComponent {
-  title='AlertingSystem';
+  title = 'AlertingSystem';
 
   disabled = false;
-  checked = false; 
+  checked = false;
 
 }

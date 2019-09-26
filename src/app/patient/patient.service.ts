@@ -3,15 +3,13 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
-export class PatientService  {
-    
-    public constructor(private httpClient:HttpClient)
-    {
+export class PatientService {
+
+    public constructor(private httpClient: HttpClient) {
 
     }
-    
-    getAllPatients (): Observable<any> 
-    {
+
+    getAllPatients(): Observable<any> {
         return this.httpClient.get('http://localhost:8080/patients');
     }
 }
