@@ -1,0 +1,76 @@
+
+<head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=block" rel="stylesheet">
+        
+</head>
+
+
+<div class="grid grid-pad" *ngIf="alignment=='top'">
+        <a *ngFor="let b of bedList" class="col-1-4">
+          <div class="module">
+              <div *ngIf="b.isAvailable === true" >
+              <h1 class="empty">
+                    <h4>{{b.bedId}}</h4>
+              </h1>
+              
+            </div>
+
+            <div *ngIf="b.isAvailable === false" >
+                    <h1 class="occupied">
+                          <h4>{{b.bedId}}</h4>
+                    </h1>
+                    <monitor-vital [bedId]="b.bedId"></monitor-vital>
+            </div>
+            
+          </div>
+        </a>
+</div>
+
+<div class="grid grid-padleft" *ngIf="alignment=='left'">
+        <a *ngFor="let b of bedList" class="colleft-1-4">
+                <div class="moduleleft">
+                <div *ngIf="b.isAvailable === true" >
+                <h1 class="empty">
+                        <h4>{{b.bedId}}</h4>
+                </h1>
+                
+                </div>
+
+                <div *ngIf="b.isAvailable === false" >
+                        <h1 class="occupied">
+                                <h4>{{b.bedId}}</h4>
+                        </h1>
+                        <monitor-vital [bedId]="b.bedId"></monitor-vital>
+                        </div>
+                
+                </div>
+
+        </a>
+</div>
+
+
+<div class="grid grid-pad" *ngIf="alignment=='bottom'">
+                <a *ngFor="let b of bedList" class="col-1-4">
+                  <div class="module">
+                      <div *ngIf="b.isAvailable === true" >
+                      <h1 class="empty">
+                            <h4>{{b.bedId}}</h4>
+                      </h1>
+                    </div>
+        
+                    <div *ngIf="b.isAvailable === false" >
+                            <h1 class="occupied">
+                                  <h4>{{b.bedId}}</h4>
+                            </h1>
+                            <br>
+                            <monitor-vital [bedId]="b.bedId"></monitor-vital>
+                    </div>
+                    
+                  </div>
+                  
+                </a>
+</div>
+        

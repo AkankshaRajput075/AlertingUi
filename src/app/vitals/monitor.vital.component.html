@@ -1,0 +1,72 @@
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+{{this.vital.pulseRate.result}} : {{this.pulseAlertGenerated}}<br>
+
+{{this.vital.spo2.result}} : {{this.spo2AlertGenerated}}<br>
+{{this.vital.temperature.result}} : {{this.temperatureAlertGenerated}}<br>
+
+<button type='button' class="btn btn-warning btn-lg" (click)="dismissAlert($event)">
+    <p class="glyphicon glyphicon-remove-sign"></p> Dismiss
+</button>
+
+<!-- <div *ngIf="displayAlert===true" >
+    <a *ngIf="this.checkPulseRate()">
+        <div class=alert *ngIf="this.pulseAlertGenerated===true">
+            <p>{{vital.pulseRate.vitalName}}:{{vital.pulseRate.reading}}</p><br>
+            <p>Status:{{vital.pulseRate.result}}</p>
+        </div>
+
+    </a>
+
+    <a *ngIf="this.checkSpo2()">
+        <div class=alert *ngIf="this.spo2AlertGenerated===true">
+            <p>{{vital.spo2.vitalName}}:{{vital.spo2.reading}}</p><br>
+            <p>Status:{{vital.spo2.result}}</p>
+        </div>
+
+    </a>
+
+    <a *ngIf="this.checkTemperature()">
+        <div class=alert *ngIf="this.temperatureAlertGenerated===true">
+            <p>{{vital.temperature.vitalName}}:{{vital.temperature.reading}}</p><br>
+            <p>Status:{{vital.temperature.result}}</p>
+        </div>
+
+    </a>
+</div> -->
+
+
+
+<div  class="firstDiv" *ngIf="displayAlert===true">
+    <div class="secondDiv">
+      <div class="thirdDiv">
+        <span class="close" (click)="displayAlert=false">X</span>
+        <a *ngIf="this.checkPulseRate()">
+            <div class=alert *ngIf="this.pulseAlertGenerated===true">
+                <p>{{vital.pulseRate.vitalName}}:{{vital.pulseRate.reading}}</p><br>
+                <p>Status:{{vital.pulseRate.result}}</p>
+            </div>
+    
+        </a>
+    
+        <a *ngIf="this.checkSpo2()">
+            <div class=alert *ngIf="this.spo2AlertGenerated===true">
+                <p>{{vital.spo2.vitalName}}:{{vital.spo2.reading}}</p><br>
+                <p>Status:{{vital.spo2.result}}</p>
+            </div>
+    
+        </a>
+    
+        <a *ngIf="this.checkTemperature()">
+            <div class=alert *ngIf="this.temperatureAlertGenerated===true">
+                <p>{{vital.temperature.vitalName}}:{{vital.temperature.reading}}</p><br>
+                <p>Status:{{vital.temperature.result}}</p>
+            </div>
+    
+        </a>
+      </div>
+    </div>
+  </div>
+
+
+<a class="alert" *ngIf="this.checkVitals()" (click)="this.displayAlertFun($event)">Alert</a>

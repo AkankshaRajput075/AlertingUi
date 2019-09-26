@@ -1,0 +1,114 @@
+.circle {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+  }
+
+  .circle .tick {
+    width: 50px;
+    height: 50px;
+    background:red;
+    position: absolute;
+    border-radius: 50%;
+    left: 50%;
+    top: 50%;
+    margin-left: -5px;
+    margin-top: -5px;
+  }
+
+  .circle .tick:nth-child(1) {
+    transform: rotate(0deg) translate(200px);
+  }
+  .circle .tick:nth-child(2) {
+    transform: rotate(45deg) translate(200px);
+  }
+  .circle .tick:nth-child(3) {
+    transform: rotate(90deg) translate(200px);
+  }
+  .circle .tick:nth-child(4) {
+    transform: rotate(135deg) translate(200px);
+  }
+  .circle .tick:nth-child(5) {
+    transform: rotate(180deg) translate(200px);
+  }
+  .circle .tick:nth-child(6) {
+    transform: rotate(225deg) translate(200px);
+  } 
+  .circle .tick:nth-child(7) {
+    transform: rotate(270deg) translate(200px);
+  }
+  .circle .tick:nth-child(8) {
+    transform: rotate(315deg) translate(200px);
+  }
+/* DashboardComponent's private CSS styles */
+[class*='col-'] {
+  float: left;
+  padding-right: 20px;
+  padding-bottom: 200px;
+}
+[class*='col-']:last-of-type {
+  padding-right: 0;
+}
+a {
+  text-decoration: none;
+}
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+h3 {
+  text-align: center;
+  margin-bottom: 0;
+}
+h4 {
+  position: relative;
+}
+.grid {
+  margin: 0;
+}
+.col-1-4 {
+  width: 20%;
+}
+.module {
+  padding: 40px;
+  text-align: center;
+  color: #eee;
+  max-height: 150px;
+  min-width: 300px;
+  background-color: #3f525c;
+  border-radius: 2px;
+}
+.module:hover {
+  background-color: #EEE;
+  cursor: pointer;
+  color: #607d8b;
+}
+.grid-pad {
+  padding: 20px 0;
+}
+.grid-pad > [class*='col-']:last-of-type {
+  padding-right: 20px;
+}
+@media (max-width: 600px) {
+  .module {
+    font-size: 10px;
+    max-height: 75px; }
+}
+@media (max-width: 1024px) {
+  .grid {
+    margin: 0;
+  }
+  .module {
+    min-width: 60px;
+  }
+}
+
+
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/
